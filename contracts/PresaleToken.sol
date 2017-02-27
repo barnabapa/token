@@ -1,5 +1,17 @@
 pragma solidity ^0.4.4;
-
+//DATE_27_02_2017_9:41 MGT+1
+//SECURITY AUDIT == NEGATIVE by BARNABAPA
+// - suicide function in crowdsale contract 
+/// more about this : https://www.reddit.com/r/ethereum/comments/3ilpvb/what_happens_when_you_send_ether_to_a_postsuicide/
+// = one withdraw funtion with send to unknown structure of multisig wallet which might need much gas
+// - https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send()-in-Ethereum-&-Solidity
+// - Which multisig is used?
+// - migration aftrer withdrawing all funds
+// - migration not at will of users which may trade tokens in presale period, but by administration + / -
+// FUNTIONAL :
+// - no function to transfer at once all balances to next period of crowdfunding
+// - without minimal and maximum cap implementation and option that participants withdraw funds - transaction costs => so this is not a technical escrow implementation 
+// END of AUDIT BARNABAPA DATE_27_02_2017_9:41 MGT+1
 
 // ERC20 token interface is implemented only partially.
 // Token transfer is prohibited due to spec (see PRESALE-SPEC.md),
